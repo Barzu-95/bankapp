@@ -1,3 +1,5 @@
+package stats
+
 import(
 	"fmt"
 	"github.com/Barzu-95/bankapp/pkg/bank/types"
