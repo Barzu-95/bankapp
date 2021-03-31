@@ -20,3 +20,20 @@ func Avg(payments []types.Payment) types.Money {
 
 	return avg
 }
+
+// TotalInCategory evaluates
+func TotalInCategory(payments []types.Payment, category types.Category) types.Money {
+	sum := 0
+
+	if len(payments) == 1 {
+		return payments[0].Amount
+	}
+	
+	for _, payment := range payments {
+		if category == payment.Category {
+			sum = sum + int(payment.Amount)
+		} 
+	}
+
+	return types.Money(sum)
+}
